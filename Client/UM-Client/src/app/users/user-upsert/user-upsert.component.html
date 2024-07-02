@@ -1,0 +1,32 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="container">
+
+    {{ userForm.value | json }}
+
+    <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName" required class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName" required class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="userName">Username:</label>
+        <input type="text" id="userName" formControlName="userName" required class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" required class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="userStatus">User Status:</label>
+        <input type="text" id="userStatus" formControlName="userStatus" required class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="department">Department:</label>
+        <input type="text" id="department" formControlName="department" class="form-control">
+    </div>
+    <button type="submit" [disabled]="!this.userForm.valid" class="btn btn-primary">Save</button>
+</form>
